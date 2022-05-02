@@ -1,18 +1,15 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
 
 namespace BlogPessoal.src.modelos
 {
-    [Table("tb_postagem")]
+    [Table("tb_postagens")]
     public class PostagemModelo
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Required]
-        [StringLength(30)]
+        [Required, StringLength(30)]
         public string Titulo { get; set; }
 
         [Required, StringLength(100)]
