@@ -18,7 +18,6 @@ namespace BlogPessoal.src.repositorios
         PostagemModelo PegarPostagemPeloId(int id);
         List <PostagemModelo> PegarTodasPostagens();
         List<PostagemModelo> PegarPostagensPeloTitilo(string titulo);
-        List<PostagemModelo> PegarPostagensPelaDescricao(string descricao);
-
+        List<PostagemModelo> PegarPostagensPorPesquisa(string titulo, string descricaoTema, string nomeCriador);
     }
 }
