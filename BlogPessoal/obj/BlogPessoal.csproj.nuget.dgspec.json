@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\erick\\Desktop\\gen\\Curso Gerenation DotNet\\Modulo2\\BPVS\\BlogPessoal\\BlogPessoal\\BlogPessoal.csproj": {}
+    "C:\\Users\\erick\\Desktop\\gen\\Curso Gerenation DotNet\\Modulo2\\BlogPessoal\\BlogPessoal\\BlogPessoal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\erick\\Desktop\\gen\\Curso Gerenation DotNet\\Modulo2\\BPVS\\BlogPessoal\\BlogPessoal\\BlogPessoal.csproj": {
+    "C:\\Users\\erick\\Desktop\\gen\\Curso Gerenation DotNet\\Modulo2\\BlogPessoal\\BlogPessoal\\BlogPessoal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erick\\Desktop\\gen\\Curso Gerenation DotNet\\Modulo2\\BPVS\\BlogPessoal\\BlogPessoal\\BlogPessoal.csproj",
+        "projectUniqueName": "C:\\Users\\erick\\Desktop\\gen\\Curso Gerenation DotNet\\Modulo2\\BlogPessoal\\BlogPessoal\\BlogPessoal.csproj",
         "projectName": "BlogPessoal",
-        "projectPath": "C:\\Users\\erick\\Desktop\\gen\\Curso Gerenation DotNet\\Modulo2\\BPVS\\BlogPessoal\\BlogPessoal\\BlogPessoal.csproj",
+        "projectPath": "C:\\Users\\erick\\Desktop\\gen\\Curso Gerenation DotNet\\Modulo2\\BlogPessoal\\BlogPessoal\\BlogPessoal.csproj",
         "packagesPath": "C:\\Users\\erick\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erick\\Desktop\\gen\\Curso Gerenation DotNet\\Modulo2\\BPVS\\BlogPessoal\\BlogPessoal\\obj\\",
+        "outputPath": "C:\\Users\\erick\\Desktop\\gen\\Curso Gerenation DotNet\\Modulo2\\BlogPessoal\\BlogPessoal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\erick\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -73,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -17,7 +17,6 @@ namespace BlogPessoal.src.repositorios
         void DeletarPostagem(int Id);
         PostagemModelo PegarPostagemPeloId(int id);
         List <PostagemModelo> PegarTodasPostagens();
-        List<PostagemModelo> PegarPostagensPeloTitilo(string titulo);
         List<PostagemModelo> PegarPostagensPorPesquisa(string titulo, string descricaoTema, string nomeCriador);
     }
 }

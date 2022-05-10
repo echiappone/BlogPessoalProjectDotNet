@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aHMGnz1+DSEQXkjDcdTztCth1cw14EOQ3wsme14ZReePcILDq/Ocnpfe97ffD9rTAPTGDgmUCwLq1FjE2r6XVg==",
+  "dgSpecHash": "QU73Iphy9/mI4CNLO22TQ/QoJklsizIBTbrmt5qg++4w/YNpE3rMkqrU4QFOGQ7Gp4lbbpUKrQ0zXspSjKtxyg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\erick\\Desktop\\gen\\Curso Gerenation DotNet\\Modulo2\\BPVS\\BlogPessoal\\BlogPessoal\\BlogPessoal.csproj",
+  "projectFilePath": "C:\\Users\\erick\\Desktop\\gen\\Curso Gerenation DotNet\\Modulo2\\BlogPessoal\\BlogPessoal\\BlogPessoal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\erick\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\erick\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

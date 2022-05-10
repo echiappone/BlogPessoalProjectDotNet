@@ -13,10 +13,11 @@ namespace BlogPessoal.src.repositorios.implementacoes
 
     public interface ITema
     {
-        void NovoTema(NovoTemaDTO usuario);
-        void AtualizarTema(AtualizarTemaDTO usuario);
+        void NovoTema(NovoTemaDTO tema);
+        void AtualizarTema(AtualizarTemaDTO tema);
         void DeletarTema(int id);
         TemaModelo PegarTemaPeloId(int id);
+        List<TemaModelo> PegarTodosTemas();
         List<TemaModelo> PegarTemaPelaDescricao(string descricao);
     }
 }
