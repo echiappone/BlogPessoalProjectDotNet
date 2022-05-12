@@ -1,8 +1,9 @@
 ﻿using BlogPessoal.src.dtos;
 using BlogPessoal.src.modelos;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace BlogPessoal.src.repositorios.implementacoes
+namespace BlogPessoal.src.repositorios
 {
     /// <summary>
     /// <para>Resumo: Responsavel por representar ações de CRUD de Usuario</para>
@@ -13,11 +14,11 @@ namespace BlogPessoal.src.repositorios.implementacoes
     
     public interface IUsuario
     {
-        void NovoUsuario(NovoUsuarioDTO usuario);
-        void AtualizarUsuario(AtualizarUsuarioDTO usuario);
-        void DeletarUsuario(int id);
-        UsuarioModelo PegarUsuarioPeloId(int id);
-        UsuarioModelo PegarUsuarioPeloEmail(string email);
-        List<UsuarioModelo> PegarUsuarioPeloNome(string nome);
+        Task<UsuarioModelo> PegarUsuarioPeloIdAsync(int id);
+        Task<List<UsuarioModelo>> PegarUsuariosPeloNomeAsync(string nome);
+        Task<UsuarioModelo> PegarUsuarioPeloEmailAsync(string email);
+        Task NovoUsuarioAsync(NovoUsuarioDTO usuario);
+        Task AtualizarUsuarioAsync(AtualizarUsuarioDTO usuario);
+        Task DeletarUsuarioAsync(int id);
     }
 }
