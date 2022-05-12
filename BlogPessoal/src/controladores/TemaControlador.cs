@@ -1,6 +1,7 @@
+using System.Threading.Tasks;
 using BlogPessoal.src.dtos;
 using BlogPessoal.src.repositorios;
-using BlogPessoal.src.repositorios.implementacoes;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlogPessoal.src.controladores
@@ -11,70 +12,87 @@ namespace BlogPessoal.src.controladores
     public class TemaControlador : ControllerBase
     {
         #region Atributos
+        
         private readonly ITema _repositorio;
+
         #endregion
 
+
         #region Construtores
+
         public TemaControlador(ITema repositorio)
         {
             _repositorio = repositorio;
         }
+
         #endregion
+
 
         #region Métodos
 
-        // Método PegarTodosTemas
         [HttpGet]
+        [Authorize]
         public IActionResult PegarTodosTemas()
         {
             var lista = _repositorio.PegarTodosTemas();
+
             if (lista.Count < 1) return NoContent();
+            
             return Ok(lista);
         }
 
-        // Método PegarTemaPeloId
         [HttpGet("id/{idTema}")]
-        public IActionResult PegarTemaPeloId([FromRoute] int idTema)
+        [Authorize]
+        public async Task<ActionResult> PegarTemaPeloIdAsync([FromRoute] int idTema)
         {
-            var tema = _repositorio.PegarTemaPeloId(idTema);
+            var tema = await _repositorio.PegarTemaPeloIdAsync(idTema);
+
             if (tema == null) return NotFound();
+            
             return Ok(tema);
         }
 
-        // Método PegarTemasPelaDescricao
-        [HttpGet]
-        public IActionResult PegarTemasPelaDescricao([FromQuery] string descricaoTema)
+        [HttpGet("pesquisa")]
+        [Authorize]
+        public async Task<ActionResult> PegarTemasPelaDescricaoAsync([FromQuery] string descricaoTema)
         {
-            var temas = _repositorio.PegarTemaPelaDescricao(descricaoTema);
+            var temas = await _repositorio.PegarTemasPelaDescricaoAsync(descricaoTema);
+
             if (temas.Count < 1) return NoContent();
+            
             return Ok(temas);
         }
 
-        // Método NovoTema
         [HttpPost]
-        public IActionResult NovoTema([FromBody] NovoTemaDTO tema)
+        [Authorize]
+        public async Task<ActionResult> NovoTemaAsync([FromBody] NovoTemaDTO tema)
         {
             if(!ModelState.IsValid) return BadRequest();
-            _repositorio.NovoTema(tema);
-            return Created($"api/Temas/id/{tema.Id}", tema);
+
+            await _repositorio.NovoTemaAsync(tema);
+            
+            return Created($"api/Temas", tema);
         }
 
-        // Método AtualizarTema
         [HttpPut]
-        public IActionResult AtualizarTema([FromBody] AtualizarTemaDTO tema)
+        [Authorize(Roles = "ADMINISTRADOR")]
+        public async Task<ActionResult> AtualizarTema([FromBody] AtualizarTemaDTO tema)
         {
             if(!ModelState.IsValid) return BadRequest();
-            _repositorio.AtualizarTema(tema);
+
+            await _repositorio.AtualizarTemaAsync(tema);
+            
             return Ok(tema);
         }
 
-        // Método DeletarTema
         [HttpDelete("deletar/{idTema}")]
-        public IActionResult DeletarTema([FromRoute] int idTema)
+        [Authorize(Roles = "ADMINISTRADOR")]
+        public async Task<ActionResult> DeletarTema([FromRoute] int idTema)
         {
-            _repositorio.DeletarTema(idTema);
+            await _repositorio.DeletarTemaAsync(idTema);
             return NoContent();
         }
+
         #endregion
     }
 }
