@@ -136,3 +136,12 @@ C:\Users\erick\Desktop\gen\Curso Gerenation DotNet\Modulo2\BPVS\BlogPessoal\Blog
 C:\Users\erick\Desktop\gen\Curso Gerenation DotNet\Modulo2\BPVS\BlogPessoal\BlogPessoalTest\obj\Debug\net5.0\BlogPessoalTest.pdb
 C:\Users\erick\Desktop\gen\Curso Gerenation DotNet\Modulo2\BPVS\BlogPessoal\BlogPessoalTest\obj\Debug\net5.0\BlogPessoalTest.genruntimeconfig.cache
 C:\Users\erick\Desktop\gen\Curso Gerenation DotNet\Modulo2\BPVS\BlogPessoal\BlogPessoalTest\obj\Debug\net5.0\ref\BlogPessoalTest.dll
+C:\Users\erick\Desktop\GenBrasil\CursoDotNet\Projetos\BlogPessoalProject\BlogPessoalTest\bin\Debug\net5.0\CoverletSourceRootsMapping
+C:\Users\erick\Desktop\GenBrasil\CursoDotNet\Projetos\BlogPessoalProject\BlogPessoalTest\obj\Debug\net5.0\BlogPessoalTest.csproj.AssemblyReference.cache
+C:\Users\erick\Desktop\GenBrasil\CursoDotNet\Projetos\BlogPessoalProject\BlogPessoalTest\obj\Debug\net5.0\BlogPessoalTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erick\Desktop\GenBrasil\CursoDotNet\Projetos\BlogPessoalProject\BlogPessoalTest\obj\Debug\net5.0\BlogPessoalTest.AssemblyInfoInputs.cache
+C:\Users\erick\Desktop\GenBrasil\CursoDotNet\Projetos\BlogPessoalProject\BlogPessoalTest\obj\Debug\net5.0\BlogPessoalTest.AssemblyInfo.cs
+C:\Users\erick\Desktop\GenBrasil\CursoDotNet\Projetos\BlogPessoalProject\BlogPessoalTest\obj\Debug\net5.0\BlogPessoalTest.csproj.CoreCompileInputs.cache
+C:\Users\erick\Desktop\GenBrasil\CursoDotNet\Projetos\BlogPessoalProject\BlogPessoalTest\obj\Debug\net5.0\BlogPessoalTest.dll
+C:\Users\erick\Desktop\GenBrasil\CursoDotNet\Projetos\BlogPessoalProject\BlogPessoalTest\obj\Debug\net5.0\refint\BlogPessoalTest.dll
+C:\Users\erick\Desktop\GenBrasil\CursoDotNet\Projetos\BlogPessoalProject\BlogPessoalTest\obj\Debug\net5.0\BlogPessoalTest.pdb
