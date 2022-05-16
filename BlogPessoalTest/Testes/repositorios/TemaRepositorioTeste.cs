@@ -32,8 +32,11 @@ namespace BlogPessoalTeste.Testes.repositorios
             await _repositorio.NovoTemaAsync(new NovoTemaDTO("Python"));
             await _repositorio.NovoTemaAsync(new NovoTemaDTO("JavaScript"));
 
+             //WHEN - Quando for buscar todos os temas
+            var temas = await _repositorio.PegarTodosTemasAsync();
+
             //THEN - Entao deve retornar 4 temas
-            Assert.AreEqual(4, _repositorio.PegarTodosTemas().Count);
+            Assert.AreEqual(4, temas.Count);
         }
 
         [TestMethod]

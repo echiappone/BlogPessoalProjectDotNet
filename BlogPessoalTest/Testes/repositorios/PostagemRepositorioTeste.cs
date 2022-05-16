@@ -74,8 +74,10 @@ namespace BlogPessoalTeste.Testes.repositorios
             );
             
             // WHEN - Quando eu busco todas as postagens
+            var postagens = await _repositorioP.PegarTodasPostagensAsync();
+
             // THEN - Eu tenho 3 postagens
-            Assert.AreEqual(3, _repositorioP.PegarTodasPostagens().Count());
+            Assert.AreEqual(3, postagens.Count);
         }
 
         [TestMethod]
