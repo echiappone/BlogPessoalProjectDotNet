@@ -20,7 +20,7 @@ namespace BlogPessoal.src.dtos
     }
 
     /// <summary>
-    /// <para>Resumo: Classe espelho para alterar um novo Tema</para>
+    /// <para>Resumo: Classe espelho para alterar um Tema</para>
     /// <para> Criado por: Erick Chiappone</para>
     /// <para>Versão: 1.0</para>
     /// <para>Data: 29/04/2022</para>

@@ -35,9 +35,8 @@ namespace BlogPessoal.src.dtos
         }
     }
 
-
     /// <summary>
-    /// <para>Resumo: Classe espelho para alterar um novo Usuario</para>
+    /// <para>Resumo: Classe espelho para alterar um Usuario</para>
     /// <para> Criado por: Erick Chiappone</para>
     /// <para>Versão: 1.0</para>
     /// <para>Data: 29/04/2022</para>

@@ -14,7 +14,7 @@ namespace BlogPessoal.src.repositorios
 
     public interface ITema
     {
-        List<TemaModelo> PegarTodosTemas();
+        Task<List<TemaModelo>> PegarTodosTemasAsync();
         Task<TemaModelo> PegarTemaPeloIdAsync(int id);
         Task<List<TemaModelo>> PegarTemasPelaDescricaoAsync(string descricao);
         Task NovoTemaAsync(NovoTemaDTO tema);

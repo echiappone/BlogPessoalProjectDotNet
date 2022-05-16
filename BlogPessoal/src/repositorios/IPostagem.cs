@@ -13,7 +13,7 @@ namespace BlogPessoal.src.repositorios
     /// </summary>
     public interface IPostagem
     {
-        List<PostagemModelo> PegarTodasPostagens();
+        Task<List<PostagemModelo>> PegarTodasPostagensAsync();
         Task<PostagemModelo> PegarPostagemPeloIdAsync(int id);
         Task<List<PostagemModelo>> PegarPostagensPorPesquisaAsync(string titulo, string descricaoTema, string nomeCriador);
         Task NovaPostagemAsync(NovaPostagemDTO postagem);
