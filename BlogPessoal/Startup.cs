@@ -1,16 +1,12 @@
 using BlogPessoal.src.data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using BlogPessoal.src.repositorios;
 using BlogPessoal.src.repositorios.implementacoes;
 using BlogPessoal.src.servicos;
@@ -79,7 +75,7 @@ namespace BlogPessoal
             services.AddSwaggerGen(s =>
             {
                 s.SwaggerDoc("v1", new OpenApiInfo { Title = "Blog Pessoal", Version = "v1" });
-                s.AddSecurityDefinition("Bearer" new OpenApiSecurityScheme()
+                s.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
                 {
                     Name = "Authorization",
                     Type = SecuritySchemeType.ApiKey,
