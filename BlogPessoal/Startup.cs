@@ -32,11 +32,20 @@ namespace BlogPessoal
         // Este metodo e chamado pelo tempo de execucao. Use este metodo para adicionar servicos ao conteiner.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Configuracao Banco de Dados
-            services.AddDbContext<BlogPessoalContext>(
-            opt =>
-            opt.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"])
-            );
+            // Configuraçãp Banco de Dados
+            if (Configuration["Enviroment:Start"] == "PROD")
+            {
+                services.AddEntityFrameworkNpgsql()
+                .AddDbContext<BlogPessoalContext>(
+                opt =>
+                opt.UseNpgsql(Configuration["ConnectionStringsProd:DefaultConnection"]));
+            }
+            else
+            {
+                services.AddDbContext<BlogPessoalContext>(
+                opt =>
+                opt.UseSqlServer(Configuration["ConnectionStringsDev:DefaultConnection"]));
+            }
 
             // Configuracao Repositorios
             services.AddScoped<IUsuario, UsuarioRepositorio>();
@@ -57,19 +66,19 @@ namespace BlogPessoal
                 a.DefaultAuthenticateScheme =
                 JwtBearerDefaults.AuthenticationScheme;
                 a.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(b =>
+            }).AddJwtBearer(
+            b =>
+            {
+                b.RequireHttpsMetadata = false;
+                b.SaveToken = true;
+                b.TokenValidationParameters = new TokenValidationParameters
                 {
-                    b.RequireHttpsMetadata = false;
-                    b.SaveToken = true;
-                    b.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = new SymmetricSecurityKey(chave),
-                        ValidateIssuer = false,
-                        ValidateAudience = false
-                    };
-                }
-            );
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(chave),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
 
             // Configuracao Swagger
             services.AddSwaggerGen(s =>
@@ -86,21 +95,20 @@ namespace BlogPessoal
                 });
 
                 s.AddSecurityRequirement(
-                    new OpenApiSecurityRequirement
+                new OpenApiSecurityRequirement
+                {
                     {
+                        new OpenApiSecurityScheme
                         {
-                            new OpenApiSecurityScheme
+                            Reference = new OpenApiReference
                             {
-                                Reference = new OpenApiReference
-                                {
-                                    Type = ReferenceType.SecurityScheme,
-                                    Id = "Bearer"
-                                }
-                            },
-                            new List<string>()
-                        }
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new List<string>()
                     }
-                );
+                });
                 
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
